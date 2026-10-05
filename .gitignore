@@ -1,0 +1,11 @@
+# Editor
+.vscode/
+
+# Build outputs
+build/
+*.hex
+*.elf
+
+# OS files
+.DS_Store
+Thumbs.db
