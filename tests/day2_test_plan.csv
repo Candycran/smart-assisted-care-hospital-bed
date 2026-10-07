@@ -1,0 +1,11 @@
+Test ID,Test,Action,Expected Result,Actual Result,Pass/Fail
+D2-01,Heart-rate independence,Move HR slider only,Only HR changes,,Pass
+D2-02,SpO2 independence,Move SpO2 slider only,Only SpO2 changes,,Pass
+D2-03,Blood pressure independence,Move SYS and DIA separately,Correct BP value changes,,Pass
+D2-04,Temperature input,Move TEMP slider,Temperature changes,,Pass
+D2-05,Respiration input,Move RESP slider,Respiration changes,,Pass
+D2-06,TFT rendering,Run TFT firmware,All five vital groups visible,,Pass
+D2-07,Engineering warning,Move one signal beyond demo threshold,Warning displayed,,Pass
+D2-08,Stable recovery,Return values to stable demo range,Warning clears,,
+D2-09,Serial continuity,Observe Serial Monitor while TFT runs,Values continue printing,,Pass
+D2-10,MATLAB analysis,Run MATLAB script,Plots shown and CSV generated,,Pass
