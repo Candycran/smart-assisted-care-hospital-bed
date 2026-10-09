@@ -1,0 +1,10 @@
+State,Start_s,Finish_s,Duration_s
+Waste evacuation,0,3,3
+Primary flush,3,7,4
+Drain 1,7,9.5,2.5
+Rinse 1,9.5,13.5,4
+Drain 2,13.5,16,2.5
+Final rinse,16,19,3
+Final drain,19,22,3
+Cycle verify,22,23.5,1.5
+Complete hold,23.5,25,1.5
