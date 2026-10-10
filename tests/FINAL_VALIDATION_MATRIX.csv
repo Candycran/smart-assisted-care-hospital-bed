@@ -1,0 +1,25 @@
+Test ID,Test,Procedure,Expected Result,Actual Result,Pass/Fail,Evidence File
+F-01,Startup,Safe initial switch configuration,NORMAL; toilet servo=0; waste valve closed
+F-02,Stable patient monitoring,Set nominal simulated vitals,TFT/Serial stable; no engineering warning
+F-03,Vital warning independence,Move SpO2 or another vital beyond demo threshold,Engineering warning activates; toilet controller remains operational
+F-04,No-patient request,Patient=NO; press TOILET,REQUEST_REJECTED; no mechanism movement
+F-05,Obstruction before opening,Obstruction=YES; press TOILET,FAULT; red indicator/buzzer
+F-06,Normal opening,Patient=YES; safe limits; press TOILET,OPENING; servo moves toward 90 deg
+F-07,Open-position feedback,Closed limit OFF; at full opening Open limit ON,TOILET_READY then IN_USE
+F-08,Single finish click,Press TOILET once in IN_USE,No securing action
+F-09,Double finish click,Double press within configured window,FINISH_RECEIVED then SECURING
+F-10,Obstruction during securing,Set obstruction while closing,FAULT; movement sequence stops
+F-11,Normal securing,Open limit OFF; at fully closed Closed limit ON,SECURED
+F-12,Sanitation precheck,"Water=YES, Drain=YES, Leak=NO, access closed",SANITATION_CHECK passes
+F-13,Normal sanitation cycle,Allow full sequence,Waste evac -> flush -> drains/rinses -> verify -> NORMAL
+F-14,Water loss,Water=NO during water-dependent stage,FAULT; sanitation outputs off
+F-15,Drain loss,Drain=NO during evacuation/drain stage,FAULT; sanitation outputs off
+F-16,Leak during sanitation,Leak=YES during sanitation,FAULT; sanitation outputs off
+F-17,Emergency during opening,Press EMERGENCY while opening,EMERGENCY latched
+F-18,Emergency during sanitation,Press EMERGENCY during sanitation,EMERGENCY; sanitation outputs off
+F-19,Unsafe caregiver reset,In FAULT/EMERGENCY with unsafe limits/obstruction/leak; press RESET,Reset denied
+F-20,Safe caregiver reset,"Clear hazards; ClosedLimit=ON, OpenLimit=OFF; press RESET",Returns to NORMAL
+F-21,Monitoring concurrency,Change vital inputs during toilet use/sanitation,TFT/Serial continue updating
+F-22,Opening position timeout,Do not confirm OPEN LIMIT,FAULT after movement timeout
+F-23,Closing position timeout,Do not confirm CLOSED LIMIT,FAULT after movement timeout
+F-24,Contradictory position sensors,OpenLimit=ON and ClosedLimit=ON at safety check,FAULT

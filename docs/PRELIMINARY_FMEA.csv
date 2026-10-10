@@ -1,0 +1,11 @@
+ID,Failure Mode,Cause,Potential Effect,Current Control,Severity,Occurrence,Detection,RPN,Recommended Physical-Prototype Mitigation
+FM-01,Toilet mechanism traps/contacts patient,Obstruction/pinch during movement,Patient injury,Obstruction input; emergency stop; movement timeout,10,3,3,90,Physical force/current sensing and mechanical anti-pinch design required in real prototype
+FM-02,Open position falsely assumed,Position sensor failure,Unsafe patient access,Independent OPEN limit + timeout,9,3,3,81,Redundant position sensing for physical prototype
+FM-03,Closing position falsely assumed,Position sensor failure,Sanitation could begin before isolation,CLOSED limit + open-limit consistency check,10,3,3,90,Redundant interlock and mechanically failsafe isolation
+FM-04,Drain path unavailable,Blockage/service failure,Overflow/contamination,Drain-available interlock,8,4,3,96,Real flow/level/pressure sensing
+FM-05,Cleaning water unavailable,Supply failure,Incomplete cycle,Water-available interlock,6,4,2,48,Reservoir/pressure/flow sensing
+FM-06,Leak during sanitation,Hose/valve/seal failure,Fluid near patient/electronics,Leak input causes FAULT and outputs off,9,3,3,81,Multiple leak sensors + isolation valve
+FM-07,Emergency input activated,Patient distress/system concern,Continued motion/cleaning could worsen event,Emergency state shuts sanitation outputs,10,3,2,60,Hard-wired emergency circuit in physical design
+FM-08,Physiological input incorrect,Sensor/signal failure,False or missed warning,Prototype labels readings as simulated; warning independent,9,4,5,180,"Clinical-grade sensors, signal-quality checks, redundancy, validation"
+FM-09,Power lost during mechanism movement,Power interruption,Mechanism may stop between positions,Not physically modelled,9,3,7,189,Battery backup/manual release/failsafe actuator required
+FM-10,Controller/software failure,Firmware fault,Loss of monitoring/control,State machine and fault logic; test coverage,10,3,5,150,"Watchdog, independent safety controller, formal software verification"
